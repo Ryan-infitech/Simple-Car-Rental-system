@@ -1,7 +1,9 @@
 <?php
 
-return [
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\ServiceProvider;
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Car Rental System'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'Asia/Jakarta'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,11 +80,11 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'id'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'id_ID'),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +124,20 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    |
+    | This file is for defining the "aliases" of the application, which are
+    | "shortcuts" to classes, so you can use them more easily. Laravel
+    | provides a default set of aliases, which you can modify as needed.
+    |
+    */
+
+    'aliases' => Facade::defaultAliases()->merge([
+        // Add custom aliases here if needed
+    ])->toArray(),
 
 ];
