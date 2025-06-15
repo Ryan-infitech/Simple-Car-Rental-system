@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
@@ -29,7 +28,6 @@ return [
     */
 
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
@@ -44,7 +42,6 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
-            'report' => false,
         ],
 
         's3' => [
@@ -60,6 +57,19 @@ return [
             'report' => false,
         ],
 
+        'car_images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/cars'),
+            'url' => env('APP_URL').'/storage/cars',
+            'visibility' => 'public',
+        ],
+
+        'payment_proofs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/payment_proofs'),
+            'url' => env('APP_URL').'/storage/payment_proofs',
+            'visibility' => 'public',
+        ],
     ],
 
     /*
@@ -76,5 +86,4 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-
 ];
