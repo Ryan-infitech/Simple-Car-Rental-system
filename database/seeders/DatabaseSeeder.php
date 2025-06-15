@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             CarSeeder::class,
-            // BookingSeeder akan dibuat jika diperlukan
+            BookingSeeder::class,
+            // NotificationSeeder akan dibuat jika diperlukan
         ]);
     }
 }
